@@ -1,0 +1,20 @@
+body {
+	margin:0;
+	padding:0;
+	font-size:14px;
+	font-family: "Verdana";
+	color:#000000;
+}
+
+.content-content { margin:0 auto; width:500px; padding:10% 0 0 0;  }
+.content-images { text-align:center; padding:10px 0 20px 0;}
+.content-form { margin-bottom:10px; text-align:center;}
+.notes { text-align:center; font-size:11px; border:solid 1px #cccccc; margin:10px 0 10px 0; border-radius:5px;}
+#footer { 
+	position:absolute;
+	bottom:0;
+	text-align:right;
+	font-size:12px;
+	width:100%;
+	padding:5px;
+}

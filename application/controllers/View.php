@@ -10,8 +10,8 @@ class View extends CI_Controller {
 		$this->load->view('frontendview');
 	}
 	
-	public function viewprocess() {
-		$configform = array(
+	public function viewprocess($val) {
+		/*$configform = array(
 			array('field'=>'barcodeid', 'name'=>'Barcode ID', 'rules'=>'required')
 		);
 			
@@ -19,8 +19,8 @@ class View extends CI_Controller {
 		if($this->form_validation->run() != true) {
 			$this->session->set_flashdata('errorabsensi', '<font color="red">All field required.</font>');
 			echo 'wrong';
-		} else {
-			$_barcodeid = $this->security->xss_clean($this->input->post('barcodeid', true));
+		} else {*/
+			$_barcodeid = $val;
 			$_today = date('Y-m-d');
 			$_timenow = date('H:i:s');
 			$_restout = '12:00:00';
@@ -95,7 +95,7 @@ class View extends CI_Controller {
 				$this->session->set_flashdata('errorabsensi', '<font color="green">Terima kasih, data absensi anda telah masuk.</font>');
 				echo 'success';
 			}
-		}
+		//}
 		
 	}
 }

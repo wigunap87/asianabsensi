@@ -30,18 +30,35 @@
 				</div>
 				<div class="content-form" ng-controller="myController">
 					{{errorMsg}}
+					<form method="post" ng-submit="myAbsen()" name="login" id="login" autocomplete="off" data-toggle="validator">
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1">Tanggal</span>
+							<input type="text" class="form-control" value="<?php echo date('D, d F Y'); ?>" name="tanggal" readonly />
+						</div>
+						<br/>
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1">Jam</span>
+							<input type="text" class="form-control" value="{{ clock | date: 'HH:mm:ss' }}" name="jam" readonly />
+						</div>
+						<br/>
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1">No. Karyawan</span>
+							<input type="text" class="form-control" ng-model="modelbarcode" name="barcodeid" required />
+						</div>
+					</form>
+					<!--{{errorMsg}}
 					<form name="myForm" novalidate>
 						<div class="input-group">
 							<span class="input-group-addon" id="basic-addon1">Barcode ID</span>
 							<input type="text" class="form-control" ng-model="modelbarcode" name="barcodeid" aria-describedby="basic-addon1" required />
 						</div>
-						<!--<br/>
-						<input type="submit" name="submit" value="Submit" class="btn btn-info" />-->
-					</form>
+					</form>-->
 				</div>
+				<h1>Informasi Absensi</h1>
 				<div class="alert alert-info notes" role="alert" align=center>
-					Tampilan di atas merupakan salah satu media untuk menginputkan data absensi pegawai yang didapat dari scan barcode dan otomatis langsung insert ke dalam database.
-					Sebagai catatan, jika jam menunjukkan di bawah pukul 12.00, maka akan masuk absensi pagi dan tidak akan terjadi double data.
+				{{ datakaryawan }}
+				<br/>
+				{{ datamonth }}
 				</div>
 			</div>
 		</div>
